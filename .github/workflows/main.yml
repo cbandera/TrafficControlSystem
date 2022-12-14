@@ -12,11 +12,17 @@ on:
 
   workflow_dispatch: # for testing
   
+permissions:
+  contents: read # required for checkout
+
 jobs:
   build-and-test:
     name: Build And Test
     runs-on: [ubuntu-latest]
     steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+    
     - name: Build Devcontainer
       uses: devcontainers/ci@v0.2
       with:
