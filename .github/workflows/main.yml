@@ -9,15 +9,13 @@ on:
       - reopened
   push:
     branches: [main]
-  schedule:
-    - cron: "30 21 * * *"
 
   workflow_dispatch: # for testing
   
 jobs:
   build-and-test:
     name: Build And Test
-    runs-on: [default]
+    runs-on: [ubuntu-latest]
     steps:
     - name: Build Devcontainer
       uses: devcontainers/ci@v0.2
