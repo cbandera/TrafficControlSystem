@@ -2,13 +2,13 @@ name: Main Workflow
 
 on:
   pull_request:
-    branches: [main]
+    branches: [master]
     types:
       - opened
       - synchronize
       - reopened
   push:
-    branches: [main]
+    branches: [master]
 
   workflow_dispatch: # for testing
   
